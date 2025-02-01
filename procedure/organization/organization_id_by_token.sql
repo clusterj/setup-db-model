@@ -2,15 +2,15 @@ USE clusterj_accounts;
 
 DELIMITER $
 
-DROP PROCEDURE IF EXISTS account_by_token $
+DROP PROCEDURE IF EXISTS organization_id_by_token $
 
-CREATE PROCEDURE account_by_token(
+CREATE PROCEDURE organization_id_by_token(
     IN in_token VARCHAR(10)
 )
 BEGIN
 
     SELECT id id
-    FROM acct_account
+    FROM orga_organization
     WHERE (token = in_token);
 
 END $
