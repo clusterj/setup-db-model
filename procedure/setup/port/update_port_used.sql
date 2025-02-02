@@ -2,18 +2,19 @@ USE clusterj_accounts;
 
 DELIMITER $
 
-DROP PROCEDURE IF EXISTS update_used_port $
+DROP PROCEDURE IF EXISTS update_port_used $
 
-CREATE PROCEDURE update_used_port(
+CREATE PROCEDURE update_port_used(
 
     IN in_id INTEGER,
+    IN in_used INTEGER,
     OUT out_row_count INTEGER
 
 )
 BEGIN
 
-    UPDATE mach_machine
-    SET freeports = freeports - 1
+    UPDATE port_port
+    SET used = in_used
     WHERE (id = in_id);
 
     SELECT ROW_COUNT() INTO out_row_count;
