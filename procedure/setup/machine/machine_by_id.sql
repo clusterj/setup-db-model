@@ -9,7 +9,7 @@ CREATE PROCEDURE machine_by_id(
 )
 BEGIN
 
-    SELECT id id, host host, freeports freeports, created created, updated updated
+    SELECT id id, host host, port port, freeports freeports, created created, updated updated
     FROM mach_machine
     WHERE (id = in_id);
 
