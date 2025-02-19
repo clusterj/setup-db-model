@@ -11,7 +11,6 @@ CREATE PROCEDURE create_account(
     IN in_type INTEGER,
     IN in_status INTEGER,
     IN in_created DATETIME,
-    IN in_updated DATETIME,
     IN in_statustoken VARCHAR(10),
     OUT out_last_id INTEGER
 
@@ -20,7 +19,7 @@ BEGIN
 
     INSERT INTO acct_account
     (token, email, type, status, created, updated, statustoken)
-    VALUES (in_token, in_email, in_type, in_status, in_created, in_updated, in_statustoken);
+    VALUES (in_token, in_email, in_type, in_status, in_created, in_created, in_statustoken);
 
     SELECT LAST_INSERT_ID() INTO out_last_id;
 
