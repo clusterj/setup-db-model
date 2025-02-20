@@ -14,8 +14,8 @@ CREATE PROCEDURE create_session(
 )
 BEGIN
 
-    INSERT INTO acct_account
-    (token, created, acc_id)
+    INSERT INTO sess_session
+    (token, created, acct_id)
     VALUES (in_token, in_created, in_acct_id);
 
     SELECT LAST_INSERT_ID() INTO out_last_id;
