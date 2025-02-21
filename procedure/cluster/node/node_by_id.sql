@@ -9,7 +9,7 @@ CREATE PROCEDURE node_by_id(
 )
 BEGIN
 
-    SELECT id id, token token, cter_id cter_id, port port
+    SELECT id id, token token, cter_id cter_id, port_id port_id
     FROM node_node
     WHERE (id = in_id);
 
