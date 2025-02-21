@@ -6,17 +6,17 @@ DROP PROCEDURE IF EXISTS create_node $
 
 CREATE PROCEDURE create_node(
 
-    IN in_token VARCHAR,
-    IN cter_id INTEGER,
-    IN in_port INTEGER,
+    IN in_token VARCHAR(10),
+    IN in_cter_id INTEGER,
+    IN in_port_id INTEGER,
     OUT out_last_id INTEGER
 
 )
 BEGIN
 
     INSERT INTO node_node
-    (token, cter_id, port)
-    VALUES (in_token, in_cter, in_port);
+    (token, cter_id, port_id)
+    VALUES (in_token, in_cter_id, in_port_id);
 
     SELECT LAST_INSERT_ID() INTO out_last_id;
 
