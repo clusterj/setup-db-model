@@ -9,7 +9,7 @@ CREATE PROCEDURE port_by_id(
 )
 BEGIN
 
-    SELECT id id, port port, used used, mach_id mach_id
+    SELECT id id, port port, shutdownport shutdownport, used used, mach_id mach_id
     FROM port_port
     WHERE (id = in_id);
 
